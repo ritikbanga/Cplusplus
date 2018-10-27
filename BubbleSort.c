@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//function to print an array
 void printArray(int *arr, int n)
 {
     int i;
@@ -11,6 +12,7 @@ void printArray(int *arr, int n)
     printf(" }");
 }
 
+//function to implemnt bubble sort
 void bubbleSort(int *arr, int n)
 {
     int i, j, temp;
@@ -28,30 +30,14 @@ void bubbleSort(int *arr, int n)
     }
 }
 
-int main()
-{
-    int n, i;
-    do
-    {
-        printf("\nEnter the number of elements in the array\n");
-        scanf("%d", &n);
-    }
-    while (n<1);
 
-    int *arr = (int *)calloc(n, sizeof(int));
-
-    for(i=0; i<n; ++i)
-    {
-        printf("\nEnter element %d\n", i+1);
-        scanf("%d", arr+i);
-    }
-    printf("\nDisplaying original array...");
-    printArray(arr, n);
-
-    bubbleSort(arr, n);
-
-    printf("\nDisplaying sorted array...");
-    printArray(arr, n);
-
-    return 0;
-}
+// Driver program to test above functions 
+int main() 
+{ 
+    int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    bubbleSort(arr, n); 
+    printf("Sorted array: \n"); 
+    printArray(arr, n); 
+    return 0; 
+} 
